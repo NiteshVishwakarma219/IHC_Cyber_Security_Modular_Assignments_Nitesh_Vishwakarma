@@ -1,0 +1,34 @@
+IHC - Practical Approach to Cyber Security
+Modular Assignment 2: Basics of Cryptography
+Sample Input/Output
+
+Input message:
+Healthcare appointment confirmation: APPT-2026-001
+
+Expected output pattern:
+[1] AES-256-GCM
+Encrypted data: <random base64 value>
+Decrypted data: Healthcare appointment confirmation: APPT-2026-001
+Result: Encryption/decryption successful
+
+[2] RSA-2048 OAEP
+Encrypted data: <random base64 value>
+Decrypted data: Healthcare appointment confirmation: APPT-2026-001
+Result: Encryption/decryption successful
+
+[3] SHA-256
+Message hash: <64-character hexadecimal SHA-256 digest>
+Result: Hash generated successfully
+
+[4] RSA-PSS Digital Signature
+Signature: <random base64 value>
+Verification: Signature verified successfully.
+
+[5] Integrity check
+Original hash: <original digest>
+Modified hash: <different digest>
+Hashes match: False
+Observation: changing the message changes the hash.
+
+Note:
+Encrypted ciphertext, RSA ciphertext and signatures are intentionally shown as variable values because secure encryption uses fresh random values/keys. The important result is successful encryption/decryption, hash generation, signature verification, and detection of modified data.
