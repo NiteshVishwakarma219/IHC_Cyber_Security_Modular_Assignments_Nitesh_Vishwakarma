@@ -1,0 +1,11 @@
+MA4 WIRESHARK ANALYSIS NOTES
+Filters:
+1. tcp.flags.syn == 1 && tcp.flags.ack == 0
+2. icmp
+3. dns
+
+SYN-flood indicator: repeated SYN packets without corresponding completed handshakes can indicate excessive incomplete TCP connection attempts. Validate against baseline traffic before treating it as an attack.
+
+ICMP indicator: a sudden increase in echo requests from many sources can indicate an ICMP flood or scanning activity.
+
+Evidence status: analysis guidance / simulated observation.

@@ -1,0 +1,10 @@
+MA4 CONTROLLED EVIDENCE — PING
+Target: 127.0.0.1 (localhost)
+Command: ping 127.0.0.1
+
+Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
+Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
+Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
+Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
+
+Interpretation: localhost is reachable and responds consistently. This is a controlled connectivity check.

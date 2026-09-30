@@ -1,0 +1,8 @@
+MA4 ZEEK-STYLE SAMPLE CONNECTION LOG — SIMULATED
+#fields ts id.orig_h id.orig_p id.resp_h id.resp_p proto service conn_state
+12:01:02.101 192.0.2.10 40122 198.51.100.20 443 tcp - S0
+12:01:02.102 192.0.2.11 40123 198.51.100.20 443 tcp - S0
+12:01:02.103 192.0.2.12 40124 198.51.100.20 443 tcp - S0
+12:01:02.104 192.0.2.13 40125 198.51.100.20 443 tcp - S0
+
+S0 represents a connection attempt with no reply observed in the sample.

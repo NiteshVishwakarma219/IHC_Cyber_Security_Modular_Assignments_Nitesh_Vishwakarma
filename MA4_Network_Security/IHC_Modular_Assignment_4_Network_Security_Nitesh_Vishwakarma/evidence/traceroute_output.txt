@@ -1,0 +1,9 @@
+MA4 CONTROLLED EVIDENCE — TRACEROUTE
+Target: 127.0.0.1
+Command (Windows): tracert 127.0.0.1
+
+Tracing route to localhost [127.0.0.1]
+  1    <1 ms    <1 ms    <1 ms    127.0.0.1
+Trace complete.
+
+Interpretation: localhost has a single local hop; this demonstrates the command and interpretation.

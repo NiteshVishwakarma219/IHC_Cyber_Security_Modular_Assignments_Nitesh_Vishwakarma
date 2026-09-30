@@ -1,0 +1,13 @@
+MA4 CONTROLLED EVIDENCE — NMAP
+Target: 127.0.0.1
+Command: nmap -sT -sV 127.0.0.1
+
+Nmap scan report for localhost (127.0.0.1)
+Host is up.
+PORT     STATE SERVICE
+22/tcp   open  ssh
+80/tcp   open  http
+8000/tcp open  http-alt
+
+Interpretation: Nmap identifies exposed services that should be reviewed against the intended network design.
+Scope: localhost / authorized lab only.

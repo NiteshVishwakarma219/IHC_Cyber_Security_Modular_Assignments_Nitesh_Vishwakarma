@@ -1,0 +1,8 @@
+MA4 TCPDUMP SAMPLE — SIMULATED
+12:01:02.101 IP 192.0.2.10.40122 > 198.51.100.20.443: Flags [S], seq 1001, win 64240
+12:01:02.102 IP 192.0.2.11.40123 > 198.51.100.20.443: Flags [S], seq 1002, win 64240
+12:01:02.103 IP 192.0.2.12.40124 > 198.51.100.20.443: Flags [S], seq 1003, win 64240
+12:01:02.104 IP 192.0.2.13.40125 > 198.51.100.20.443: Flags [S], seq 1004, win 64240
+
+Interpretation: repeated SYN requests are consistent with a SYN-flood pattern when observed at abnormal volume and without normal handshake completion.
+The 192.0.2.0/24 documentation range is used for safe examples.

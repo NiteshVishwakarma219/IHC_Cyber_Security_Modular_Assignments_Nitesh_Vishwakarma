@@ -1,0 +1,10 @@
+MA4 SURICATA-STYLE SAMPLE ALERT — SIMULATED
+[**] [1:2001219:3] ET DOS Possible TCP SYN Flood [**]
+[Classification: Attempted Denial of Service] [Priority: 2] {TCP}
+192.0.2.10:40122 -> 198.51.100.20:443
+
+[**] [1:2001219:3] ET DOS Possible TCP SYN Flood [**]
+[Classification: Attempted Denial of Service] [Priority: 2] {TCP}
+192.0.2.13:40125 -> 198.51.100.20:443
+
+Interpretation: sample IDS telemetry showing how an alert can correlate a high-rate SYN pattern with an availability threat.

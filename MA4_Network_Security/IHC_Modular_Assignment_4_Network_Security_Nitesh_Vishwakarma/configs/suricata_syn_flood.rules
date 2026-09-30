@@ -1,0 +1,2 @@
+# Lab detection rule — example only
+alert tcp any any -> $HOME_NET any (flags:S; msg:"MA4 Possible TCP SYN Flood"; threshold:type both,track by_src,count 20,seconds 1; sid:1004001; rev:1;)
