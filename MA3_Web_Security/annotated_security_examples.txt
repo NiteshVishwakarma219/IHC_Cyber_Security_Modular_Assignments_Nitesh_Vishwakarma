@@ -1,0 +1,36 @@
+# MA3 - Safe Web Security Demonstrations
+# These examples are for local/authorized training only.
+
+# 1. SQL Injection
+# Vulnerable pattern (do NOT use in production):
+query = "SELECT * FROM users WHERE username = '" + username + "'"
+
+# Safer parameterized pattern:
+query = "SELECT * FROM users WHERE username = ?"
+cursor.execute(query, (username,))
+
+
+# 2. Reflected XSS
+# Vulnerable pattern:
+return "<h2>Search: " + search_term + "</h2>"
+
+# Safer pattern:
+from html import escape
+return "<h2>Search: " + escape(search_term) + "</h2>"
+
+
+# 3. CSRF defense - simplified Flask-style example
+from secrets import token_urlsafe
+
+csrf_token = token_urlsafe(32)
+
+# Store token in the user's server-side session.
+session["csrf_token"] = csrf_token
+
+# For a state-changing request, compare the submitted token:
+submitted = request.form.get("csrf_token")
+if submitted != session.get("csrf_token"):
+    abort(403)
+
+# Also use appropriate cookie settings:
+# Secure=True, HttpOnly=True, SameSite="Lax" or stricter where suitable.
