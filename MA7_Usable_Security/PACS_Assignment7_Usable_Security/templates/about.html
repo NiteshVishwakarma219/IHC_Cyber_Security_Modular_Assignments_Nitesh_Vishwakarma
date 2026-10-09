@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>About — LinkCheck</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+<header class="topbar"><div class="brand"><span class="brand-mark">L</span><div><strong>LinkCheck</strong><small>Usable Security Lab</small></div></div><a href="{{ url_for('index') }}">← Back to checker</a></header>
+<main class="about-wrap">
+  <p class="eyebrow">DESIGN RATIONALE</p><h1>Useful warnings, not more noise.</h1>
+  <p>LinkCheck demonstrates a just-in-time security nudge: the user sees a concise warning when simple URL signals warrant a pause, with a plain-language explanation and a clear way to go back.</p>
+  <div class="about-grid">
+    <article><h2>Timely</h2><p>The warning appears when the user submits a link for review, close to the decision to open it.</p></article>
+    <article><h2>Actionable</h2><p>Each warning identifies a reason and suggests checking the domain or source independently.</p></article>
+    <article><h2>Respectful</h2><p>The design avoids shaming the user and preserves a deliberate choice instead of using manipulative language.</p></article>
+    <article><h2>Honest</h2><p>The prototype clearly states that its heuristic is not a reputation service and can miss malicious links or flag benign ones.</p></article>
+  </div>
+  <p class="notice"><strong>Evaluation note:</strong> This is a prototype and reasoned heuristic evaluation, not a completed user study. Do not report user feedback unless you actually collect it.</p>
+</main>
+<footer>LinkCheck · Assignment 7 prototype</footer>
+</body></html>

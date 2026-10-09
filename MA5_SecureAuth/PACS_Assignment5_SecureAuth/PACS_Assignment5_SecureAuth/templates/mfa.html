@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block title %}Multi-factor verification{% endblock %}{% block content %}<section class="card"><h1>Second-factor verification</h1><p class="muted">Identity: <strong>{{ user['username'] }}</strong>. Both checks must pass for this demo.</p>
+<form method="post"><label>Time-based one-time password (TOTP)</label><input name="otp" inputmode="numeric" autocomplete="one-time-code" minlength="6" maxlength="8" required placeholder="6-digit authenticator code">
+<label>Simulated biometric sample</label><input name="biometric" required autocomplete="off" placeholder="Enter demo sample code">
+<button type="submit">Verify MFA</button></form>
+<p class="muted">Demo biometric code: <code>BIO-DEMO-4821</code>. This string is a simulation only; it is not a fingerprint or face match.</p>
+<p class="muted">For the seeded accounts, run the command in README to retrieve the local TOTP secret and generate the current code. A production system should use a secure enrollment and recovery process.</p></section>{% endblock %}

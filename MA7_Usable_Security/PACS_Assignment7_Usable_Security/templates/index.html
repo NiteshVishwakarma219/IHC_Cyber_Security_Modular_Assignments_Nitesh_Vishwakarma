@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinkCheck — Security Nudge Demo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">L</span><div><strong>LinkCheck</strong><small>Usable Security Lab</small></div></div>
+    <a href="{{ url_for('about') }}">How it works</a>
+  </header>
+  <main class="layout">
+    <section class="hero">
+      <p class="eyebrow">SECURITY NUDGE PROTOTYPE</p>
+      <h1>Pause before<br><span>you click.</span></h1>
+      <p class="intro">Review a suspicious-looking link before opening it. A short, clear explanation helps you make a safer decision without flooding you with alerts.</p>
+      <div class="principles">
+        <div><span class="icon">✓</span><span><b>Explain the reason</b><small>Specific signals, not just “unsafe.”</small></span></div>
+        <div><span class="icon">Ⅱ</span><span><b>Keep the choice yours</b><small>Verify, go back, or continue knowingly.</small></span></div>
+      </div>
+    </section>
+    <section class="panel">
+      <div class="panel-head"><span class="mini-icon">↗</span><div><h2>Check a link</h2><p>Paste the full address below.</p></div></div>
+      <form method="post">
+        <label for="url">Website URL</label>
+        <input id="url" name="url" type="text" placeholder="https://example.com" value="{{ url }}" required autocomplete="url">
+        <p class="hint">Tip: check the domain spelling and how you received the link.</p>
+        <button type="submit" name="action" value="check" class="primary">Review link <span>→</span></button>
+      </form>
+      {% if result %}
+      <div class="result {{ result.level }}">
+        <div class="result-title"><span class="status-dot"></span><div><strong>{{ result.label }}</strong><small>{{ result.host if result.host else 'Address review' }}</small></div></div>
+        <ul>{% for reason in result.reasons %}<li>{{ reason }}</li>{% endfor %}</ul>
+        {% if result.user_choice %}<p class="choice-note">{{ result.user_choice }}</p>{% endif %}
+        <div class="actions">
+          <form method="post"><input type="hidden" name="url" value="{{ url }}"><button name="action" value="cancel" class="secondary">Go back</button></form>
+          <form method="post"><input type="hidden" name="url" value="{{ url }}"><button name="action" value="continue" class="text-button">I verified it — continue</button></form>
+        </div>
+      </div>
+      {% endif %}
+      <p class="disclaimer">Demo only: this heuristic is not a malware scanner or URL reputation service. A “no warning signs” result does not mean a site is safe.</p>
+    </section>
+  </main>
+  <footer>LinkCheck · Assignment 7 prototype · Runs locally on your computer</footer>
+</body>
+</html>

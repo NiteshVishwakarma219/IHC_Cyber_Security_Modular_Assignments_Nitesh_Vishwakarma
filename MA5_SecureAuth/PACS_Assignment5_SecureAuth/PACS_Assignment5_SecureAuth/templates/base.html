@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}PACS Secure Access{% endblock %}</title>
+<style>
+:root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#172033;background:#f3f6fb}*{box-sizing:border-box}
+body{margin:0}.top{background:#14233f;color:white;padding:18px 5vw;display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}
+.top a{color:#e5edff;text-decoration:none;margin-right:14px}.brand{font-weight:800;letter-spacing:.3px}
+main{max-width:1000px;margin:32px auto;padding:0 18px}.card{background:white;border:1px solid #dce3ef;border-radius:14px;padding:24px;margin:16px 0;box-shadow:0 8px 25px #1a2d4d0a}
+h1,h2{margin-top:0;color:#152849}.muted{color:#5c6880;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+label{display:block;font-weight:650;margin:14px 0 6px}input,select{width:100%;padding:11px;border:1px solid #c7d1e2;border-radius:8px;font-size:1rem}
+button,.btn{display:inline-block;background:#1d4ed8;color:white;border:0;border-radius:8px;padding:11px 16px;font-weight:700;text-decoration:none;cursor:pointer;margin-top:14px}
+.btn.secondary{background:#e8eef9;color:#18345f}.btn.danger{background:#b42318}table{border-collapse:collapse;width:100%;font-size:.92rem}th,td{padding:10px;border-bottom:1px solid #e1e7f0;text-align:left;vertical-align:top}th{background:#f5f7fb}
+.flash{padding:12px;border-radius:8px;margin:10px 0;background:#eaf2ff}.flash.danger{background:#feeceb;color:#8b1e17}.flash.success{background:#e6f7ed;color:#14532d}.flash.warning{background:#fff4d6;color:#734b00}
+code{background:#eef2f8;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}.pill{display:inline-block;padding:4px 8px;border-radius:999px;background:#e9efff;color:#2149a2;font-size:.8rem;font-weight:700}
+footer{text-align:center;padding:28px;color:#65718a;font-size:.85rem}.small{font-size:.9rem}
+</style>
+</head><body>
+<header class="top"><div class="brand">PACS · SECURE ACCESS</div><nav>
+<a href="{{ url_for('index') }}">Home</a><a href="{{ url_for('security') }}">Security design</a>
+{% if session.get('user_id') %}<a href="{{ url_for('dashboard') }}">Dashboard</a><a href="{{ url_for('user_area') }}">User area</a>{% if session.get('role')=='ADMIN' %}<a href="{{ url_for('admin') }}">Admin</a>{% endif %}<a href="{{ url_for('logout') }}">Logout</a>
+{% else %}<a href="{{ url_for('register') }}">Register</a><a href="{{ url_for('login') }}">Login</a>{% endif %}
+</nav></header>
+<main>
+{% with messages = get_flashed_messages(with_categories=true) %}{% for category,message in messages %}<div class="flash {{ category }}">{{ message }}</div>{% endfor %}{% endwith %}
+{% block content %}{% endblock %}
+</main><footer>Practical Approach to Cyber Security · Assignment 5 · Classroom demonstration only</footer>
+</body></html>

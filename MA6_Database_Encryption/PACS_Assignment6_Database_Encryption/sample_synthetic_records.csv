@@ -1,0 +1,4 @@
+transaction_id,cardholder_name,synthetic_card_number,expiry
+TXN-1001,Alex Example,4111111111111111,12/29
+TXN-1002,Jordan Sample,5555555555554444,09/28
+TXN-1003,Taylor Demo,4000000000000002,03/30

@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block title %}Sign in{% endblock %}{% block content %}<section class="card"><h1>Sign in</h1><form method="post">
+<label>Username</label><input name="username" required autocomplete="username">
+<label>Password</label><input type="password" name="password" required autocomplete="current-password">
+<button type="submit">Verify password</button></form><p class="muted">Successful password verification is followed by MFA. Failed attempts are temporarily throttled.</p>
+<hr><p>Or use federated identity:</p><a class="btn secondary" href="{{ url_for('google_login') }}">Continue with Google OAuth 2.0</a></section>{% endblock %}
